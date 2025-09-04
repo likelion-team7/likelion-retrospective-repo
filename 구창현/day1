@@ -1,0 +1,52 @@
+오늘배운내용
+1. 예외, 에러, 예외처리 try-catch,finally, throw,throws,사용자 정의 예외, RuntimeException,CheckedException
+2. IO
+
+===============================
+
+예외 : 프로그램 실행중 발생하는 이벤트로 프로그램의 명령의 정상적인 흐름을 방해하는것.
+        예외처리를 통해서 수습할 수 있음.
+
+에러 : 수습 할수 없는 시스템적 오류
+
+예외처리 : 프로그램 실행 중에 발생하는 예기치 못한 오류(예외)에 미리 대비하여
+          프로그램의 비정상적인 종료를 막고 정상 상태를 유지하도록 코드를 작성하는것
+
+try-catch : try블럭 안에는 예외가 발생할수 있는 코드를 작성, catch문에서 예외를처리할 코드를 사용한다.
+            try블럭이나, catch블럭은 세트로 존재해야함,
+            만약 try문에서 예외가 발생하게되면 발생한 밑부분의 코드는 실행이 되지 않고 catch문으로 넘어가게됨
+
+finally : catch블럭 뒤에 올수 있으며 필수는 아님, finally블럭은 예외가 발생하던 발생하지않던 실행됨
+
+throw : 예외를 일부러 발생시키는 키워드, 보통 try문에서 자주 사용함
+
+throws : 메서드내에서 예외처리를 하지않고 해당 메서드를 사용한 곳에서 예외처리를 하도록 예외를 위로 던지는 것
+
+사용자 정의 예외 : 사용자가 직접 예외 클래스를 정의하여 사용 ex) 1~100까지의 숫자만 입력받기
+
+RuntimeException : 컴파일러에서 예외처리를 강제하지 않음, 프로그래머 실수로 발생하는 예외
+                   ex)NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException 등등..
+
+CheckedException : 컴파일러가 예외처리를 강제함, 외부환경에의해 발생하는 예외
+                   종류 :  -ArithmeticException:  정수를 0으로 나누었을 경우
+                          -ArrayIndexOutOfBoundsException: 배열을 참조하는 인덱스가 잘못된 경우
+                          -NullPointerException: 널(null) 객체를 참조했을 경우
+                          -NegativeArraySizeException: 배열의 크기가 음수인 경우
+                          -NoClassDefFoundException: 클래스를 찾을 수 없는 경우
+                          -IndexOutOfBoundsException: 객체의 범위를 벗어난 색인(Index)를 사용하는 경우
+                          -IllegalArgumentException: 메서드에 유형이 일치하지 않는 매개변수를 전달하는 경우
+                          -IllegalStateException: 적절하지 않은 때에 메서드를 호출하는 경우
+                           자주 발생하는 Exception의 종류만 기록
+
+=================================================================
+IO : 프로그램과 외부 장치(파일, 콘솔, 네트워크 등) 사이에 데이터를 주고받는 입출력(Input/Output) 기능을 의미한다.
+
+크게 바이트 스트림 (Byte Stream)과 문자 스트림 (Character Stream)으로 구분된다.
+바이트 스트림 안에는 InputStream와 OutputStream 으로나뉘고
+문자 스트림 안에는 Reader와 Writer으로 나뉜다
+
+바이트 스트림은 1 byte
+문자 스트림 2 byte
+
+바이트스트림을 대표하는 클래스는 FileInputStream, BufferedInputStream등이 있음
+문자 스트림을 대표하는 클래스는 FileReader, BufferedReader등이있다.
