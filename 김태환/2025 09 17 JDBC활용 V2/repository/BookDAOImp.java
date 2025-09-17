@@ -1,7 +1,7 @@
 package net.likelion.repository;
 
 import net.likelion.common.DBUtil;
-import net.likelion.dto.BookDTO;
+import net.likelion.domain.dto.BookDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class BookDAOImp implements BookDAO {
             }
         }catch (Exception e) {
             if (e.getMessage().contains("Duplicate entry")) {
-                System.out.println("오류: 입력한 ISBN은 이미 존재합니다.");
+                System.out.println("오류: 입력한 ISBN은 이미 다른 도서에 사용 중입니다.");
             } else {
                 System.out.println(e.getMessage());
             }
@@ -118,7 +118,7 @@ public class BookDAOImp implements BookDAO {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select * from books where title like?";
+        String sql = "select * from books where title like ?";
 
         try{
             conn = DBUtil.getConnection();
